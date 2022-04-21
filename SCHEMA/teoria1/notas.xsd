@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"><!--add alias, para add a las key words
+en todas las palabras que pertenecen a ese espacio de nombre tnego que ponerle el alias
+alias = xs key words schema, element, complexType, string, y sus cierres -->
+<!--linea 2 importa el xml por eso le ponemos el alias delante -->
+	<xs:element name="nota">
+	<xs:complexType>
+	    <xs:all>
+	    	<xs:element name="de" type="xs:string" />
+	    	<xs:element name="para" type="xs:string" />
+	    	<xs:element name="titulo" type="xs:string" />
+	    	<xs:element name="contenido" type="xs:string" />
+	    </xs:all>
+	</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>
+
+
+
+<!--existen 2 TIPOS DE ELEMENTOS
+ELEMENTO SIMPLE: SOLO GUARDA TEXTO 
+		COMPLEJO: TODO LO DEMAS.
+		hay un elemento nota complejo que tiene esta secuencia
+		
+		DEFINICIÓN DE ELEMENTO TIENES ESTE NOMBRE Y ERES DE ESTE TIPO-->

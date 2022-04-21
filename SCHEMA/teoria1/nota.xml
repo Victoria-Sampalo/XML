@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nota xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="notas.xsd"> <!--ENLAZAR CON EL XSD -->
+	<de>Juan</de> <!--ELEMENTO SIMPLE: SOLO GUARDA TEXTO -->
+	<para>Pedro</para>
+	<titulo>Recordatorio</titulo>
+	<contenido>A las 7:00 pon despertados para ir al instituto</contenido>
+</nota>
+
+<!--ELEMENTO SIMPLE: SOLO GUARDA TEXTO 
+		COMPLEJO: TODO LO DEMAS.-->

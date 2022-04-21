@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<notas  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="notas3.xsd"> 
+	<nota> 
+		
+		<de>Juan</de> 
+		<para>Pedro</para>
+		<!--<titulo>Recordatorio</titulo>-->
+		<fecha>2022-04-09</fecha>
+		<contenido>A las 7:00 pon despertados para ir al instituto</contenido>
+	</nota>
+	<nota> 
+		Juan Pedro
+		<de>Juan</de> 
+		<para>Pedro</para>
+		<titulo>Recordatorio</titulo>
+		
+		<contenido>A las 7:00 pon despertados para ir al instituto</contenido>
+	</nota>
+</notas>
+
+<!--ELEMENTO SIMPLE: SOLO GUARDA TEXTO 
+		COMPLEJO: TODO LO DEMAS.-->
