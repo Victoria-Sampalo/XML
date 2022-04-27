@@ -40,6 +40,7 @@
     <xs:enumeration value="Maria"/>
 
 </xs:restriction>
+</xs:simpleType>
  <!-- RESTRICCION SOBRE SECUENCIA DE NÚMEROS-->
 <!--
     </xs:simpleType>
@@ -50,11 +51,13 @@
     <xs:maxInclusive value="99999999"/>
 
 
-</xs:restriction> -->
+</xs:restriction>
+</xs:simpleType>
+-->
 
  <!-- RESTRICCION PATRONES-->
 
-</xs:simpleType>
+
 
 <xs:simpleType name="tipoDni"> <!-- -->
 <xs:restriction base="xs:string">

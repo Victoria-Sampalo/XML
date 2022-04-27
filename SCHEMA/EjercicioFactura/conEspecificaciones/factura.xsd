@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="facturas" type="tipoFacturas" />
+
+    <xs:complexType name="tipoFacturas">
+        <xs:sequence>
+            <xs:element name="factura" type="tipoFactura" maxOccurs="unbounded" />
+
+
+        </xs:sequence>
+
+
+    </xs:complexType>
+
+    <xs:complexType name="tipoFactura">
+        <xs:sequence>
+            <xs:element name="datos_cliente" type="tipoCliente" />
+            <xs:element name="datos_factura" type="tipoDatosFactura" />
+        </xs:sequence>
+
+
+    </xs:complexType>
+
+    <xs:complexType name="tipoCliente">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" />
+            <xs:element name="apellido" type="xs:string" maxOccurs="2" />
+            <xs:element name="dni" type="tipoDni" />
+            <!-- RESTRIC Dni 8 numeros seguidos de una letra -->
+            <xs:element name="tfno" type="tipoTfno" maxOccurs="1" />
+            <!-- RESTRIC tfno 9 cifrás nunca por cero -->
+        </xs:sequence>
+        <xs:attribute name="ident" type="xs:string" />
+
+    </xs:complexType>
+
+    <!-- RESTRICTION  tfno 9 cifrás nunca por cero -->
+    <xs:simpleType name="tipoTfno">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="100000000" />
+            <xs:maxInclusive value="999999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!--RESTRICTION DNI -->
+    <xs:simpleType name="tipoDni">
+
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8}[A-Z]" />
+            <!--{} num de veces que se repite
+                [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][-][A-Za-z]
+                [0-9]+[-][A-Za-z] MIN 1 MAX INFINITO
+                -->
+
+        </xs:restriction>
+
+
+    </xs:simpleType>
+
+
+    <xs:complexType name="tipoDatosFactura">
+        <xs:sequence>
+            <!--resguardo must appear -->
+            <xs:element name="resguardo" type="tipoResguardo" minOccurs="1" />
+            <xs:element name="alquileres" type="tipoAlquileres" />
+
+
+        </xs:sequence>
+
+
+    </xs:complexType>
+
+    <xs:complexType name="tipoResguardo">
+        <xs:sequence>
+            <!-- RESTRC tipo de pago-->
+            <xs:element name="forma_pago" type="tipoPago" />
+
+            <!-- RESTRC tipo importe, num decimal 7,2-->
+            <xs:element name="importe_total" type="tipoImporte" />
+
+
+        </xs:sequence>
+        <!-- RESTRC SIEMPRE MONEDA valor euro-->
+        <xs:attribute name="moneda" type="tipoMoneda" />
+
+
+    </xs:complexType>
+        <!-- RESTRC SIEMPRE MONEDA valor euro-->
+    <xs:simpleType name="tipoMoneda">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="euro" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- RESTRICCION TIPO DE PAGO-->
+    <xs:simpleType name="tipoPago">
+        <xs:restriction base="xs:string">
+            <!-- value lo que yo quiero que valga-->
+            <xs:enumeration value="Tarjeta"/>
+            <xs:enumeration value="Efectivo"/>
+        </xs:restriction>
+        </xs:simpleType>
+
+
+        <!-- RESTRC tipo importe, num decimal 7,2-->
+        <xs:simpleType name="tipoImporte">
+            <xs:restriction base="xs:decimal">
+                <xs:totalDigits value="7"/> <!--MÁXIMO NUM DÍGITOS-->
+                <xs:fractionDigits value="2"/> <!-- MÁXIMO DECIMALES -->
+            </xs:restriction>
+            </xs:simpleType>
+    
+
+    <xs:complexType name="tipoAlquileres">
+        <xs:sequence>
+            <!--NO ENTENDI NO HICE: Los alquileres se realizan de películas. El alquiler de películas lleva asociada una fecha
+de devolución que es común a todas las películas alquiladas en la misma factura. -->
+            <xs:element name="fecha" type="xs:string" />
+            <xs:element name="peliculas" type="tipoPeliculas" />
+
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoPeliculas">
+        <xs:sequence>
+            <xs:element name="pelicula" type="tipoPelicula" />
+
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoPelicula">
+        <xs:sequence>
+            <xs:element name="titulo" type="xs:string" />
+            <xs:element name="genero" type="xs:string" />
+            <xs:element name="duracion" type="xs:string" />
+            <xs:element name="actores" type="tipoActores" />
+
+
+        </xs:sequence>
+        <xs:attribute name="id_pelicula" type="xs:string" />
+        <xs:attribute name="valoracion" type="xs:string" />
+
+
+    </xs:complexType>
+
+    <xs:complexType name="tipoActores">
+        <xs:sequence>
+            <xs:element name="actor" type="tipoActor" minOccurs="3" maxOccurs="3"/>
+
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="tipoActor">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" />
+            <xs:element name="apellido" type="xs:string" maxOccurs="2" />
+
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>
