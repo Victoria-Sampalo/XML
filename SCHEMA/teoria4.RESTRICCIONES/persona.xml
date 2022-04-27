@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<persona nacimiento="1999-10-20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="persona.xsd">
+<datos>
+<nombre>Pepe</nombre><!--restriccion para una seleccion cerrada de nombres -->
+<apellidos>Garcia Solano</apellidos><!--13 restriccion sobre número de caracteres -->
+<dni>25390952-A</dni><!-- restriccion para que sean numeros --><!-- restriccion PRA PATRONES -->
+</datos>
+<precio moneda="euros">12.99</precio><!-- restriccion para numeros decimales --><!-- restriccion para tipos de monedas -->
+
+</persona>
+
+<!-- -->

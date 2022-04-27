@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">     
+
+<xs:element name="persona" type="tipoPersona"/>
+    
+    <xs:complexType name="tipoPersona">
+        <xs:sequence>
+            <xs:element name="datos" type="info"/>
+            <!-- precio es decimal-->
+            <xs:element name="precio" type="tipoPrecio"/> <!--CUANDO A PRECIO LE AÑADES UN ATRIBUTO YA NO ES SIMPLE****************************-->
+            
+        </xs:sequence>
+        <!-- DEFINIR ATRIBUTOS-->
+        <xs:attribute name="nacimiento" type="xs:date"/>
+    </xs:complexType>
+
+
+<xs:complexType name="info">
+        <xs:sequence>
+            <!-- -->
+            <!-- TEORÍA SOBRE RESTRICCIONES****************************-->
+            <xs:element name="nombre" type="tipoNombre"/>
+            <xs:element name="apellidos" type="tipoApellido"/>
+            <xs:element name="dni" type="tipoDni"/>
+            
+        </xs:sequence>
+        
+    </xs:complexType>
+
+
+
+    <!-- siempre son de tipo SIMPLE-->
+
+     <!-- RESTRICCION NOMBRE-->
+    <xs:simpleType name="tipoNombre">
+<xs:restriction base="xs:string">
+    <!-- value lo que yo quiero que valga-->
+    <xs:enumeration value="Pepe"/>
+    <xs:enumeration value="Juan"/>
+    <xs:enumeration value="Maria"/>
+
+</xs:restriction>
+ <!-- RESTRICCION SOBRE SECUENCIA DE NÚMEROS-->
+<!--
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoDni">  790 55 940 ŚOLO NÚMEROS, EL 0 POR DELANTE EN EL XML NO LO VA A CONTAR 
+<xs:restriction base="xs:positiveInteger">
+    <xs:minInclusive value="10000000"/>
+    <xs:maxInclusive value="99999999"/>
+
+
+</xs:restriction> -->
+
+ <!-- RESTRICCION PATRONES-->
+
+</xs:simpleType>
+
+<xs:simpleType name="tipoDni"> <!-- -->
+<xs:restriction base="xs:string">
+<xs:pattern value="[0-9]{8}[-][A-Za-z]"/>
+<!--{} num de veces que se repite
+[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][-][A-Za-z]
+[0-9]+[-][A-Za-z] MIN 1 MAX INFINITO
+-->
+
+</xs:restriction>
+
+
+    </xs:simpleType>
+
+        <!-- RESTRICCION SOBRE LARGO-->
+
+    <xs:simpleType name="tipoApellido"> <!-- MÁXIMO 15 CARACTERES -->
+<xs:restriction base="xs:string">
+   <xs:maxLength value="15"/>
+
+
+</xs:restriction>
+
+
+    </xs:simpleType>
+
+
+        <!-- RESTRICCION SOBRE NÚMEROS DECIMALES-->
+
+        <!-- Al add un atributo es COMPLEJO
+
+        <xs:simpleType name="tipoPrecio"> 
+
+        <xs:restriction base="xs:decimal">
+          <xs:totalDigits value="7"/> MÁXIMO NUM DÍGITOS
+          <xs:fractionDigits value="2"/> MÁXIMO DECIMALES 
+        
+        
+        </xs:restriction>
+        
+        
+            </xs:simpleType>    -->
+
+      <xs:complexType name="tipoPrecio" mixed="true">
+
+      <xs:attribute name="moneda" type="tipoMoneda"/>
+     </xs:complexType>
+
+
+<xs:simpleType name="tipoMoneda">
+    <xs:restriction base="xs:string">
+<xs:pattern value="euros|dólar|yhen"/>
+
+
+
+    </xs:restriction>
+
+
+
+
+</xs:simpleType>
+
+
+
+
+</xs:schema>

@@ -5,7 +5,9 @@
     <xs:element name="vehiculos" type="tipoVehiculos"/>
 
     <xs:complexType name="tipoVehiculos">
+        <xs:sequence>
         <xs:element name="vehiculo" type="tipoVehiculo" />
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="tipoVehiculo">
@@ -13,7 +15,7 @@
             <xs:element name="nombre" type="xs:string"/>
             <xs:element name="modelo" type="xs:string"/>
             <xs:element name="fabricacion" type="tipoFabricacion"/>
-            <xs:element name="modificadores" type="tipoModificaciones"/>
+            <xs:element name="modificaciones" type="tipoModificaciones"/>
 
     </xs:sequence>  
 
