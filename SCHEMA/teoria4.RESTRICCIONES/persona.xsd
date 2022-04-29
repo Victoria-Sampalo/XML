@@ -7,7 +7,8 @@
         <xs:sequence>
             <xs:element name="datos" type="info"/>
             <!-- precio es decimal-->
-            <xs:element name="precio" type="tipoPrecio"/> <!--CUANDO A PRECIO LE AÑADES UN ATRIBUTO YA NO ES SIMPLE****************************-->
+            <xs:element name="precio" type="tipoPrecio"/> 
+            <!--CUANDO A PRECIO LE AÑADES UN ATRIBUTO YA NO ES SIMPLE****************************-->
             
         </xs:sequence>
         <!-- DEFINIR ATRIBUTOS-->

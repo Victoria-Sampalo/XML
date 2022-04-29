@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<personas  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Persona.xsd">
+<personas  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Personas.xsd">
 
-    <personas>
+    
         <persona>
             <nombre>Juan Pardo</nombre>
-            <nacimiento dia="10" mes="Abril" anyo="1982"></nacimiento>
-            
+            <nacimiento dia="31" mes="Abril" anyo="1982"/>
+            <direcciones>
             <direccion>
                 <calle>Caoba,1</calle>
                 <poblacion>Madrid</poblacion>
@@ -13,12 +13,14 @@
                 <cpostal>28005</cpostal>
 
             </direccion>
+             </direcciones>
+            <varon/> 
             
         </persona>
 
         <persona>
             <nombre>María López</nombre>
-           
+           <direcciones>
              <direccion>
                 <calle>Roncato,1</calle>
                 <poblacion>Illescas</poblacion>
@@ -33,7 +35,8 @@
                 <cpostal>28005</cpostal>
 
             </direccion>
-       
+        </direcciones>
+        <hembra/>
         </persona>
 
 

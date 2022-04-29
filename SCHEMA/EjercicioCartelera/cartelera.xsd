@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="cartelera"/>
+
+    <xs:complexType name="pelicula">
+        <xs:sequence>
+            <xs:element name="titulo" type="xs:string"/>
+            <!--RESCT titulo original solo cuando sea SP -->
+            <xs:element name="título_original" type="xs:string"
+            minOccurs="0"/>
+            <xs:element name="nacionalidad" type="xs:string"/>
+            <xs:element name="género" type="xs:string"/>
+            <!--RESCT puede no estar clasificada. 
+            Si está lleva puntualización -->
+           
+            <xs:element name="clasificacion" type="tipoCalificacion"
+            minOccurs="0"/>
+         
+            <xs:element name="sin_clasificar" type="xs:string"
+            minOccurs="0"/>
+            
+            <xs:element name="sinopsis" type="xs:string"/>
+            <xs:element name="director" type="xs:string"/>
+            <xs:element name="reparto" type="xs:string"/>
+            <xs:element name="web" type="xs:string"/>
+            <xs:element name="cartel" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="código" type="xs:ID" use="required"/>
+        <xs:attribute name="duracion" type="xs:positiveInteger" />
+        <xs:attribute name="año" type="xs:positiveInteger" />
+   
+    </xs:complexType>
+
+    <xs:complexType name="tipoClasificacion">
+        
+        <xs:attribute name="edad" type="tipoEdad" use="required"/>
+       
+   
+    </xs:complexType>
+
+    <xs:simpleType name="tipoEdad">
+        <xs:restriction base="xs:string">
+            <!-- value lo que yo quiero que valga-->
+            <xs:enumeration value="tp"/>
+            <xs:enumeration value="8"/>
+            <xs:enumeration value="12"/>
+            <xs:enumeration value="16"/>
+            <xs:enumeration value="18"/>
+
+        </xs:restriction>
+        </xs:simpleType>
+
+</xs:schema>
