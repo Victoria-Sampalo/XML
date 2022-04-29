@@ -14,7 +14,7 @@
             <!--RESCT puede no estar clasificada. 
             Si está lleva puntualización -->
            
-            <xs:element name="clasificacion" type="tipoCalificacion"
+            <xs:element name="clasificacion" type="tipoClasificacion"
             minOccurs="0"/>
          
             <xs:element name="sin_clasificar" type="xs:string"
