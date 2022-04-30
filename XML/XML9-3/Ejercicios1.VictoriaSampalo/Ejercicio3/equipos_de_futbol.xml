@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipos_de_futbol>
+
+<equipo1 nombre="Alborán" ciudad="Estepona" entrenador="">
+	<jugador1 posicion="portero">
+	<nombre>Domingo</nombre>
+	<nacionalidad>Uruguayo</nacionalidad>
+	</jugador1>
+	
+	<jugador2 posicion="defensa">
+	<nombre>Alvaro</nombre>
+	<nacionalidad>Español</nacionalidad>
+	</jugador2>
+</equipo1>
+
+<equipo2 nombre="Real Madrid" ciudad="Madrid" entrenador="">
+	<jugador1 posicion="defensa">
+	<nombre>Gabriel</nombre>
+	<nacionalidad>Inglaterra</nacionalidad>
+	</jugador1>
+	
+	<jugador2 posicion="delantero">
+	<nombre>Nacho</nombre>
+	<nacionalidad>Senegal</nacionalidad>
+	</jugador2>
+</equipo2>
+
+
+</equipos_de_futbol>

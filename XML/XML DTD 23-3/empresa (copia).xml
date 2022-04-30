@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+
+
+<!DOCTYPE vehiculos[
+<!ELEMENT vehiculos(coche, moto, quad)>
+<!ENTITY % ryc "ruedas, color">
+<!ELEMENT coche (%ryc;, puertas)><!--
+para DEFINIRLA, se pone con espacio % ESP NAME
+para LLAMARLA, se pone JUNTO SIN ESPACIOS-->
+<!ELEMENT moto (%ryc;, cc)>
+<!ELEMENT quad (%ryc;, cc2)>
+<!ELEMENT ruedas (#PCDATA)>
+<!ELEMENT color (#PCDATA)>
+<!ELEMENT puertas (#PCDATA)>
+<!ELEMENT cc (#PCDATA)>
+<!ELEMENT cc2 (#PCDATA)>
+<!ENTITY b "blanco">
+]>
+
+<!--en los tres se repite la misma secuencia ruedas, color.
+podemos crear una ENTIDAD PARAMÉTRICA, porque la usamos SOLO en los dtd -->
+<vehiculos>
+  <coche>
+    <ruedas>4</ruedas>
+    <color>&b;</color>
+    <puertas>4</puertas>
+  </coche>
+  <moto>
+     <ruedas>2</ruedas>
+    <color>Rojo</color>
+    <cc>125</cc>
+  </moto>
+  <quad>
+     <ruedas>4</ruedas>
+    <color>Azul</color>
+    <cc2>250</cc2>
+  </quad>
+  	
+
+</vehiculos>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<!DOCTYPE persona SYSTEM "persona.dtd">
+
+<!--VALIDACION EXTERNA. -->
+<persona>
+	<nombre>Elsa</nombre>
+	<apellidos>Garcia Garcia</apellidos>
+
+	
+</persona>
+
+

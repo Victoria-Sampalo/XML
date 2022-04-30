@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<?xml-stylesheet type="text/css" href="estilo.css"?>
+<persona profesion = "cantante">
+<!--Ejemplo uso de comentarios.-->
+	<nombre>Elsa</nombre>
+	<mujer/>
+	<fecha_de_nacimiento>
+	<dia>18</dia>
+	<mes>6</mes>
+	<año>1996</año>
+	</fecha_de_nacimiento>
+	<ciudad>Pamplona</ciudad>
+	
+</persona>

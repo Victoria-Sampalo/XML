@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "biblioteca.dtd">
+
+<biblioteca>
+	<libros>
+	  
+	  <libro isbn="_1-55655-767-6">
+	  	<titulo>Fundamentos de bases de datos</titulo>
+	  	<precio valor="euro">40</precio>
+	  	<fec_publica>2003</fec_publica>
+	  	<publicadores nif="_23456788P _23456787G"/>
+	  	<editoriall name="McGraw-Hill"/>
+	  	<revision id_rev="r1">
+	  		 <revisor nif="_23456789N">
+	  		  <valoracion>8.5</valoracion>
+	  		  <comentario>Es un libro de texto básico</comentario>
+	  		
+	  		</revisor>
+	  	</revision>
+	  
+	  </libro>
+	  
+	  <libro isbn="_1-55655-767-0">
+	  	<titulo>LGDM</titulo>
+	  	<precio valor="euro">40</precio>
+	  	<fec_publica>2002</fec_publica>
+	  	<publicadores nif="_23456788P"/>
+	  	<editoriall name="Planeta"/>
+	  	<revision id_rev="r2">
+	  		 <revisor nif="_7955N">
+	  		  <valoracion>5</valoracion>
+	  		  <comentario>básico</comentario>
+	  		
+	  		</revisor>
+	  	</revision>
+	  	<revision id_rev="r3">
+	  		 <revisor nif="_23456787G">
+	  		  <valoracion>5</valoracion>
+	  		  <comentario>básico</comentario>
+	  		
+	  		</revisor>
+	  	</revision>
+	  	<revision id_rev="r4">
+	  		 <revisor nif="_23456789N">
+	  		  <valoracion>5</valoracion>
+	  		  <comentario>básico</comentario>
+	  		
+	  		</revisor>
+	  	</revision>
+	  
+	  </libro>
+	  <libro isbn="_1-55655-767-1">
+	  	<titulo>Estas suspensa</titulo>
+	  	<precio valor="euro">10</precio>
+	  	<fec_publica>2003</fec_publica>
+	  	<publicadores nif="_23456788P _23456787G"/>
+	  	<editoriall name="McGraw-Hill"/>
+	  	
+	  
+	  </libro>
+	  
+	  
+	</libros>
+	
+	<autores>
+	  <autor nif="_23456788P">
+	  	<nombre>Abraham</nombre>
+	  	<apellidos>Silberschatz</apellidos>
+	  	<email>silbers@hotmail.com</email>
+	  </autor>
+	   <autor nif="_23456787G">
+	  	<nombre>Henry</nombre>
+	  	<apellidos>Korth</apellidos>
+	  	<email>korth@hotmail.com</email>
+	  </autor>
+	  <autor nif="_23456789N">
+	  	<nombre>James</nombre>
+	  	<apellidos>Smith</apellidos>
+	  	
+	  </autor>
+	  
+	  <autor nif="_7955N">
+	  	<nombre>Victoria</nombre>
+	  	<apellidos>Smith</apellidos>
+	  	
+	  </autor>
+	  
+	</autores>
+	
+	<editoriales>
+	  <editorial edit="edi1">
+	  	<nombre>McGraw-Hill</nombre>
+	  	<oficina>Av. Santander s/n</oficina>
+	  	<web>http://www.mcgrawhill.es</web>
+	  </editorial>
+	  <editorial edit="edi2">
+	  	<nombre>Planeta</nombre>
+	  	<oficina>Av. Santander s/n</oficina>
+	  	<web>http://www.planeta.es</web>
+	  </editorial>
+	</editoriales>
+	 
+	  
+	  
+
+</biblioteca>
+

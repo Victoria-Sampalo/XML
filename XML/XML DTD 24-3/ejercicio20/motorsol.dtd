@@ -1,0 +1,27 @@
+<!ELEMENT banco (sucursal*)>
+
+<!ELEMENT sucursal (cuenta*)>
+<!ATTLIST sucursal numero ID #REQUIRED>
+<!ELEMENT cuenta (cliente*, domiciliacion)>
+<!ATTLIST cuenta id ID #REQUIRED>
+<!ELEMENT cliente (prestamo*)>
+<!ATTLIST cliente nif ID #REQUIRED>
+<!ELEMENT prestamo (#PCDATA)>
+<!ELEMENT domiciliacion (#PCDATA)>
+
+
+
+<!ATTLIST cancion duracion CDATA #REQUIRED
+				anio CDATA #REQUIRED>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT compositores (compositor+)>
+<!ELEMENT compositor (nombre, apellido)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT productores (productor+)>
+<!ELEMENT productor (nombre, apellido)>
+<!ELEMENT sello (#PCDATA)>
+<!ELEMENT artista (#PCDATA)>
+
+

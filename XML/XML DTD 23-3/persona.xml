@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+
+
+<!DOCTYPE empresa[
+<!ELEMENT empresa ((empleados, departamentos)|(departamentos,empleados))>
+<!ELEMENT empleados (empleado+)>   <!--min 1 empleado hasta infinito-->
+<!ELEMENT departamentos(departamento+)>
+<!ELEMENT empleado EMPTY>
+<!ELEMENT departamento EMPTY>
+<!ATTLIST empleado dni ID #REQUIRED
+		   departamento IDREF #REQUIRED
+		   nombre CDATA #REQUIRED
+		   horas CDATA #FIXED "8" ><!--PUEDE O NO APARECER Y SIEMPRE QUE LO HAGA, REQUIERE 8--> 
+		   <!--DEBE APARECER Y SUS VALORES SNO O 4|8. horas(4|8) #REQUIRED--> 
+<!ATTLIST depto 
+	   cod ID #REQUIRED
+	   nombre CDATA #REQUIRED>
+
+]>
+<empresa>
+	<empleados>
+		<empleado dni="_12345654-B" departamento="inf" nombre="Juan Barea"/>
+		<empleado dni="-12345699-N" departamento="inf" nombre="Maria Pérez" horas="8"/>
+		<empleado dni=":12454569-X" departamento="eco" nombre="Pedro Sanchez"/>
+		<empleado dni=".14546576-A" horas="8" departamento="eco" nombre="Alvaro Martinez"/>
+		
+	</empleados>
+	<departamentos>
+		<depto cod="inf" nombre="Informática"/>
+		<depto cod="eco" nombre="Economía"/>
+	</departamentos>
+
+
+</empresa>

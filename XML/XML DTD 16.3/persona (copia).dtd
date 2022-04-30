@@ -1,0 +1,9 @@
+<!ELEMENT persona (nombre,apellidos)>
+<!--(los elementos que tendrá, por orden)-->
+
+<!--3 elementos. dentro de persona 2 elementos y cada uno de ellos
+guarda un valor-->
+
+<!ELEMENT nombre(#PCDATA)>
+<!--(#PCDATA)cualquier valor. implica NUNCA VACÍO-->
+<!ELEMENT apellidos(#PCDATA)>

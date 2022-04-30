@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<factura id="999">
+ <pedido numero="731">
+ <pago>EFECTIVO</pago>
+  <fecha>12-01-2005</fecha>
+
+<empresa>
+   <nombre>Equipos Digitales S.L.</nombre>
+   <direccion>Av. Valladolid, Madrid 28015</direccion>
+   <cif>Q-9876543</cif>
+   <telefono>91.777.66.88</telefono>
+   <fax>91.777.66.99</fax>							
+ </empresa>
+  
+<cliente>
+	<numcli id="879"/>
+	<nombre>Darío Bueno Gutiérrez</nombre>
+	<direccion> Av. Oporto nº7 4ºd</direccion>
+	<poblacion>Madrid</poblacion>
+	<codpostal>28043</codpostal>
+	<provincia>Madrid</provincia>
+
+</cliente>
+
+<datos_factura n_pedido="731" iva="16" f_pago="efectivo" moneda="euro">
+<articulo>
+	<ref>MII93000F/8</ref>
+	<descripcion>MICRO PENTIUM IV 3000MHZ FB800</descripcion>
+	<cantidad>1</cantidad>
+	<precio>230</precio>
+	
+	<importe>266.80</importe>
+</articulo>
+<articulo>
+	<ref>MB8QDIP4</ref>
+	<descripcion>PLACA BASE QDIP4</descripcion>
+	<cantidad>1</cantidad>
+	<precio>180</precio>
+	
+	<importe>208.80</importe>
+</articulo>
+
+</datos_factura>
+
+<resultado moneda="euro">
+<total_sindeducir>970.00</total_sindeducir>
+
+<cuota_iva>155.20</cuota_iva>
+<total_factura>1125.20</total_factura>
+
+</resultado>
+
+</pedido>
+
+</factura>

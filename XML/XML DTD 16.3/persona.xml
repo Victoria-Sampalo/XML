@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<!DOCTYPE persona [
+
+<!ELEMENT persona (nombre,apellidos,direccion,(hombre|mujer),hijos?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT direccion (#PCDATA|provincia|poblacion)*><!--contenido mixto * -->
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT poblacion (#PCDATA)>
+<!ELEMENT hombre EMPTY> <!--etiqueta vacía -->
+<!ELEMENT mujer EMPTY>
+<!ELEMENT hijos (hijo*)> <!--+ 1 al infinito  * desde 0 hasta infinito-->
+
+<!ELEMENT hijo (#PCDATA)>
+]>
+<!--VALIDACION INTERNA. -->
+<persona>
+	<nombre>Elsa</nombre>
+	<apellidos>Garcia Garcia</apellidos>
+	<direccion>
+		<provincia>Málaga</provincia>
+	Calle Santo Domingo
+		<poblacion>Marbella</poblacion>
+	</direccion>
+	<mujer/> <!--O <hombre/>-->
+	
+	<hijos>
+	  <hijo>Juan</hijo>
+	   <hijo>Pedro</hijo>
+	</hijos>
+	
+	<!--validacio externa https://www.xmlvalidation.com/
+	al cargar un nuevo documento se recomienda reiniciar, xk a veces se
+	queda block
+	-->
+</persona>
+
+

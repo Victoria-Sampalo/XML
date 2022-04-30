@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE motorsol SYSTEM "motorsol.dtd">
+<motorsol>
+	<motores>
+	<motor seccion="deportivo0" >
+	<reponsable empleadosCargo="_1">Antonio</reponsable>
+
+  <piezas>
+  	<pieza>tuerca</pieza>
+  	<pieza>tornilla</pieza>
+  	<pieza>tubo</pieza>
+  </piezas>
+  
+ 	
+</motor>
+
+</motores>
+
+<empleados>
+	<empleado>
+	<nombre id="_1">Victoria</nombre></empleado>
+	<empleado>
+	<nombre id="_2">Domingo</nombre></empleado>
+	<empleado>
+	<nombre id="_3">Alvaro</nombre></empleado>
+	<empleado>
+	<nombre id="_4">Nacho</nombre></empleado>
+	
+</motorsol>

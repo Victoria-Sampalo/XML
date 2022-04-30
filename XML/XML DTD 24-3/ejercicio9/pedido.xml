@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html [
+<!ELEMENT Pedido (Destino, Ordenante, Observaciones, Contenido)>
+<!ATTLIST Pedido fecha CDATA #REQUIRED>
+<!ELEMENT Destino (Nombre, Direccion, Ciudad, CodPostal)>
+<!ELEMENT Ordenante (Nombre, Direccion, Ciudad, CodPostal)>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Direccion (#PCDATA)>
+<!ELEMENT Ciudad (#PCDATA)>
+<!ELEMENT CodPostal (#PCDATA)>
+<!ELEMENT Observaciones (#PCDATA)>
+<!ELEMENT Contenido (Producto+)>
+
+]>
+
+<hmtl>
+<Pedido fecha="19/06/1995">
+ <Destino>
+    <Nombre></Nombre>
+    <Direccion></Direccion>
+    <Ciudad></Ciudad>
+    <CodPostal></CodPostal>
+ </Destino>
+ <Ordenante>
+    <Nombre></Nombre>
+    <Direccion></Direccion>
+    <Ciudad></Ciudad>
+    <CodPostal></CodPostal>
+ </Ordenante>
+ <Pago>
+ </Pago>
+ <Observaciones>
+ </Observaciones>
+ <Contenido>
+ </Contenido>
+ 
+
+</pedido>
+</html>
+

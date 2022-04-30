@@ -1,0 +1,7 @@
+<!ENTITY % ryc "ruedas, color">
+<!ELEMENT coche (%ryc;, puertas)><!--
+para DEFINIRLA, se pone con espacio % ESP NAME
+para LLAMARLA, se pone JUNTO SIN ESPACIOS-->
+<!ELEMENT moto (%ryc;, cc)>
+<!ELEMENT quad (%ryc;, cc2)>
+

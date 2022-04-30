@@ -1,0 +1,22 @@
+<!ELEMENT banco ((sucursales,clientes)|(clientes,sucursales))>
+<!ELEMENT clientes (cliente+)>
+<!ELEMENT sucursales (sucursal+)>
+<!ELEMENT cliente (prestamo*, cuenta+, prestamo*)>
+ <!--el + final me permitiría alternar el orden, sin que ya importe -->
+ 
+ <!--PONEMOS UNA ENTIDAD PARAMÉTRICA PORQUE SE REPITE ID #REQUIRED -->
+<!ENTITY % id_re "ID #REQUIRED">
+
+<!ATTLIST cliente nif %id_re;>
+<!ELEMENT prestamo EMPTY>
+<!ATTLIST pr  estamo num %id_re;>
+<!ELEMENT cuenta EMPTY>
+<!ATTLIST cuenta 
+	cod IDREF #REQUIRED
+	permiso (titular|autorizado) #REQUIRED>
+<!ELEMENT sucursal (cuenta_corriente+)>
+<!ATTLIST sucursal id %id_re;>
+<!ELEMENT cuenta_corriente (domiciliacion*)>
+<!ATTLIST cuenta_corriente cod %id_re;>
+<!ELEMENT domiciliacion EMPTY>
+<!ATTLIST domiciliacion num %id_re;>

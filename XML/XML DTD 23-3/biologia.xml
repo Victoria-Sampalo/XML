@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+
+<!--ENTIDADES EN XML 
+	LAS QUE YA EXISTEN SON: < > &lt; "" '' &amp; &quo;
+	&amp; &	
+ &lt; menor que, less than
+ &gt; mayor que greather than
+ &apos; comillas simples
+ &quot; comillas dobles
+-->
+<!DOCTYPE empresa[
+<!ELEMENT empresa (#PCDATA)> 
+<!ENTITY adn "ácido desoxirribonucleico">
+
+]>
+<empresa>
+  &adn; Hola esto es basura para aplicar en el miau &adn;
+
+
+</empresa>
