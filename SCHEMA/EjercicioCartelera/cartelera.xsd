@@ -22,13 +22,13 @@
             
             <xs:element name="sinopsis" type="xs:string"/>
             <xs:element name="director" type="xs:string"/>
-            <xs:element name="reparto" type="xs:string"/>
-            <xs:element name="web" type="xs:string"/>
-            <xs:element name="cartel" type="xs:string"/>
+            <xs:element name="reparto" type="tipoReparto"/>
+            <xs:element name="web" type="xs:string" minOccurs="0"/>
+            <xs:element name="cartel" type="xs:string" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="código" type="xs:ID" use="required"/>
-        <xs:attribute name="duracion" type="xs:positiveInteger" />
-        <xs:attribute name="año" type="xs:positiveInteger" />
+        <xs:attribute name="duracion" type="xs:positiveInteger" use="required" />
+        <xs:attribute name="año" type="xs:positiveInteger" use="required"/>
    
     </xs:complexType>
 
@@ -38,6 +38,7 @@
        
    
     </xs:complexType>
+
 
     <xs:simpleType name="tipoEdad">
         <xs:restriction base="xs:string">
@@ -50,5 +51,12 @@
 
         </xs:restriction>
         </xs:simpleType>
+
+        <xs:complexType name="tipoReparto">
+        
+            <xs:attribute name="actor" type="xs:string"/>
+           
+       
+        </xs:complexType>
 
 </xs:schema>
