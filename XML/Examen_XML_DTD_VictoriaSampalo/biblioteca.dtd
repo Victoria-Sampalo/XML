@@ -41,19 +41,3 @@
 <!ATTLIST editorial edit IDREF #REQUIRED>
 <!ELEMENT oficina (#PCDATA)>
 <!ELEMENT web (#PCDATA)>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

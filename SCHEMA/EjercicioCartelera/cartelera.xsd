@@ -54,7 +54,7 @@
 
         <xs:complexType name="tipoReparto">
         
-            <xs:attribute name="actor" type="xs:string"/>
+            <xs:attribute name="actor" type="tipoEdad"/>
            
        
         </xs:complexType>
