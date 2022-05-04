@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cartelera xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cartelera.xsd">
+
+XSD
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="cartelera" type="tipoCartelera" />
+
+    <xs:complexType name="tipoCartelera">
+        <xs:sequence> all choice
+            <xs:element name="película" type="tipoPelicula" maxOccurs="unbounded" />
+        </xs:sequence>
+
+    </xs:complexType>
+
+    <xs:complexType name="tipoPelicula">
+        <xs:sequence>
+            <xs:element name="título" type="xs:string" />
+            <!--RESCT titulo original solo cuando sea SP -->
+            <xs:element name="título_original" type="xs:string" minOccurs="0" />
+            <xs:element name="nacionalidad" type="xs:string" />
+            <xs:element name="género" type="xs:string" />
+            <!--RESCT puede no estar clasificada. 
+            Si está lleva puntualización -->
+            <xs:choice>
+                <xs:element name="clasificación" type="tipoClasificacion" />
+
+                <xs:element name="sin_clasificar" type="tipoSinClasificar" />
+            </xs:choice>
+            <xs:element name="sinopsis" type="xs:string" />
+            <xs:element name="director" type="xs:string" />
+            <xs:element name="reparto" type="tipoReparto" />
+            <!--RESCT si sale WEB tiene que ir acompañada de CARTEL tmb
+            
+            FORMA 1 COMO APARECE AQUÍ
+            FORMA 2 OTRA SECUENCE Y ESTA MINOCCURS 0-->
+
+            <xs:group ref="tipoJuntos" minOccurs="0"/>
+    </xs:sequence>
+        <xs:attribute name="código" type="xs:ID" use="required" />
+        <xs:attribute name="duración" type="xs:positiveInteger" use="required" />
+        <xs:attribute name="año" type="xs:positiveInteger" default="2013" />
+
+    </xs:complexType>
+<!--RESCT si sale WEB tiene que ir acompañada de CARTEL tmb
+            
+            FORMA 1 COMO APARECE AQUÍ
+            FORMA 2 OTRA SECUENCE Y ESTA MINOCCURS 0-->
+    <xs:group name="tipoJuntos">
+        <xs:sequence>
+            <xs:element name="web" type="xs:string" />
+            <xs:element name="cartel" type="xs:string"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="tipoSinClasificar" />
+
+    <xs:complexType name="tipoClasificacion">
+        <xs:attribute name="edad" type="tipoEdad" use="required" />
+    </xs:complexType>
+
+
+    <xs:simpleType name="tipoEdad">
+        <xs:restriction base="xs:string">
+            <!-- value lo que yo quiero que valga-->
+            <xs:enumeration value="tp" />
+            <xs:enumeration value="8" />
+            <xs:enumeration value="12" />
+            <xs:enumeration value="16" />
+            <xs:enumeration value="18" />
+            <!-- también se puede poner patter value=" tp|8|12...|"-->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipoReparto">
+        <xs:sequence>
+            <xs:element name="actor" type="xs:string" maxOccurs="unbounded" />
+
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

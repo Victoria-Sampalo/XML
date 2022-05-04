@@ -1,0 +1,10 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fabrica SYSTEM "motor.dtd">-->
+<!ELEMENT piezas (pieza+ | )>
+<!ELEMENT pieza EMPTY #PCDATA>
+
+<!--definicion entity -->
+<!ENTITY % id_req "ID #REQUIRED">
+<!ENTITY % idrefs_req "IDREFS #REQUIRED">
+<!ATTLIST pieza id %id_req;
+		compuesta %idrefs_imp;>

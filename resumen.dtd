@@ -1,0 +1,41 @@
+<!--<?xml version="1.0" encoding = "UTF-8"?>
+
+
+<!DOCTYPE vehiculos SYSTEM "vehiculos.dtd"[]>
+<!DOCTYPE factura[] -->
+
+<!--datos_facturas -->
+<!ATTLIST datos_factura 
+	n_ped ID #REQUIRED
+	iva (16) #REQUIRED 
+	f_pago (efectivo|transferencia| bizum) #REQUIRED	 
+	moneda CDATA #FIXED "euro">
+	
+<!--si es FIXED.    iva CDATA #FIXED "16" 
+    si es REQUIRED  iva (16) #REQUIRED-->
+    <!ENTITY % ryc "ruedas, color">
+<!ELEMENT coche (%ryc;, puertas)><!--
+para DEFINIRLA, se pone con espacio % ESP NAME
+para LLAMARLA, se pone JUNTO SIN ESPACIOS-->
+<!ELEMENT moto (%ryc;, cc)>
+<!ELEMENT quad (%ryc;, cc2)>
+
+<!ENTITY % datos "nombre, (dir|dir_env), poblacion, provincia">
+<!ELEMENT datos_cliente (%datos;)>
+<!ATTLIST empleado dni ID #REQUIRED
+		   departamento IDREF #REQUIRED
+		   nombre CDATA #REQUIRED
+		   horas CDATA #FIXED "8" ><!--PUEDE O NO APARECER Y SIEMPRE QUE LO HAGA, REQUIERE 8--> 
+		   <!--DEBE APARECER Y SUS VALORES SNO O 4|8. horas(4|8) #REQUIRED--> 
+<!ATTLIST precio moneda (euro) #REQUIRED>
+<!ATTLIST libro isbn ID #REQUIRED
+		autores IDREFS #REQUIRED
+		editorial IDREF #REQUIRED
+		>	
+<!ATTLIST revision revisor IDREFS #REQUIRED valoracion CDATA #REQUIRED comentario CDATA #IMPLIED>
+
+<!ATTLIST autor nif ID #REQUIRED>
+
+
+
+
