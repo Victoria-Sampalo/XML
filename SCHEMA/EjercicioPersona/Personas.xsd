@@ -16,16 +16,18 @@
         <xs:element name="nacimiento" type="tipoNacimiento"
         minOccurs="0"/>
         <xs:element name="direcciones" type="tipoDirecciones" 
-        maxOccurs="unbounded"/>
+        minOccurs="0"/>
+
         <xs:choice>
-            <xs:element name="varon" type="xs:string"/>
-            <xs:element name="hembra" type="xs:string"/>
+            <xs:element name="varon" type="tipoSexo"/>
+            <xs:element name="hembra" type="tipoSexo"/>
         </xs:choice>
     </xs:sequence>
     
    
 </xs:complexType>
-
+<!--a pelo lo ponemos porque está VACIO -->
+<xs:complexType name="tipoSexo"/>
 <xs:complexType name="tipoDirecciones">
     <xs:sequence>
         <xs:element name="direccion" type="tipoDireccion"
@@ -46,10 +48,15 @@
 
 </xs:complexType>
 
+
+<!--Complejo porque tiene atributos, pero está vacío -->
+
 <xs:complexType name="tipoNacimiento">
+    <!--ATRIBUTOS  ORDER DOESNT MATTER-->
+
     <!--1 A 31 --> 
     <xs:attribute name="dia"  type="tipoDia"/>
-    <!--tipo cadena --> 
+    <!--tipo cadena  xs:positiveInteger--> 
     <xs:attribute name="mes"  type="tipoMes"/>
     <xs:attribute name="anyo"  type="tipoAnyo"/>
 

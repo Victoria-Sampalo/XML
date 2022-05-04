@@ -10,7 +10,7 @@
 
     </xs:complexType>
 
-    <xs:complexType name="tipoPelicula">
+    <xs:complexType name="tipoPelicula" mixed="true">
         <xs:sequence>
             <xs:element name="título" type="xs:string" />
             <!--RESCT titulo original solo cuando sea SP -->
