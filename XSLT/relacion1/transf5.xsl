@@ -9,16 +9,14 @@ se puede coger la raiz / o biblioteca-->
 
         <html>
             <head>
-                <title>Transformación Ejercicio 1</title>
+                <title>Transformación Ejercicio 5</title>
                 <meta charset="UTF-8" />
+                
 
             </head>
             <body>
-                <ul>
-                <!--<h1>Información de mis Libros</h1>-->
-                 <!--Cuando acaba, mira si hay más templates y me lo aplica-->
-                <xsl:apply-templates/>
-            </ul>
+               <h1> <xsl:value-of select="ies/@nombre"/></h1>
+               <xsl:apply-templates/>
             </body>
 
 
@@ -26,14 +24,11 @@ se puede coger la raiz / o biblioteca-->
 
     </xsl:template>
 
-    <xsl:template match="ciclo">
-      <li> <xsl:value-of select="nombre"/>
-      </li>
-
-
+    <xsl:template match="ciclo"> 
+     
+         
+           <p><xsl:value-of select="nombre"/></p> 
       
-
-
     </xsl:template>
 
 

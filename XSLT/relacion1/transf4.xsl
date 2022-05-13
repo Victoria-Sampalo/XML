@@ -11,14 +11,19 @@ se puede coger la raiz / o biblioteca-->
             <head>
                 <title>Transformación Ejercicio 1</title>
                 <meta charset="UTF-8" />
+                <style>
+                    table,td{border:1px solid black}
+                    table{border-collapse: collapse}
+
+                </style>
 
             </head>
             <body>
-                <ul>
+                <table>
                 <!--<h1>Información de mis Libros</h1>-->
                  <!--Cuando acaba, mira si hay más templates y me lo aplica-->
                 <xsl:apply-templates/>
-            </ul>
+                </table>
             </body>
 
 
@@ -26,11 +31,18 @@ se puede coger la raiz / o biblioteca-->
 
     </xsl:template>
 
-    <xsl:template match="ciclo">
-      <li> <xsl:value-of select="nombre"/>
-      </li>
+    <xsl:template match="ciclo"> <!--<tr por cada fila y un td por cada columna   <th><xsl:value-of select="nombre"/></th>-->
+     
+         <tr>
+             <td>
+                <xsl:value-of select="nombre"/>
+             </td>
 
 
+         </tr>
+            
+
+    
       
 
 
