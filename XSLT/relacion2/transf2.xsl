@@ -15,63 +15,55 @@
             th{background-color: #CCC}
 
             <!--colores -->
-            .rojo{color:red}
+            .rojo{background-color:red}
 
                  </style>
 
             </head>
             <body>
                 <h1>EJERCICIO 2.</h1>
-                <p> </p>
+                <p> Mostrar una tabla con las siguientes columnas:
+                    A- Precio del libro, ordenando los resultados por este campo .Nota: se ordenan como si
+                    fueran cadenas y no números.
+                    B- Título del libro. Se mostrará el fondo de la celda en color rojo si el precio es mayor de
+                    100.
+                    C-Año de publicación. Se mostrará el texto en cursiva.</p>
                 <table>
                     <!--CABECERAS -->
                     <th>Títulos</th>
                     <th>Autores</th>
                     <th>Editores/Afiliación</th>
-                    <!--FOR EACH HASTA LIBRO! POR CADA LIBRO UNA TR CON TD-->
+                    <!-- FOR EACH HASTA LIBRO! POR CADA LIBRO UNA TR CON TD-->
                     <!--4 FILAS 3 COLUMNAS. por cada uno de los libros tr-->
                   
                     <xsl:for-each select="bib/libro">
-                        <!--ORDENAR POR titulo-->
-                        <xsl:sort select="titulo" order="ascending" />
+                        <!--ORDENAR POR precio-->
+                        <xsl:sort select="precio" order="ascending" />
 
                         <!--tr y td de la tabla TR ROW FILA  -  TD COLUMNAS-->
                         <tr>
 
-                            <td> <!--valores del titulo -->
-                                <xsl:choose>
-                                    <xsl:when test="precio &gt; 100">
-                                      <span class="rojo"><xsl:value-of select="titulo" /> (Caro)</span> 
-                                    </xsl:when>
-                                    <xsl:otherwise>
-
-                               
-                                <xsl:value-of select="titulo" />
-                            </xsl:otherwise>
-                            </xsl:choose>
-                            </td>
                             <td> 
-                                <xsl:for-each select="autor">
-                                <xsl:value-of select="nombre" />
-                                <!--poder ponerle texto, separaciones -->
-<xsl:text></xsl:text>
-<!-- br para separar-->
-                                <xsl:value-of select="apellido" /><br/>
-                            </xsl:for-each>
+                               <xsl:value-of select="precio" /> 
                             </td>
-                            <td>
-                                <xsl:for-each select="editor">
-                                    <xsl:value-of select="apellido" />
-                                    <!--poder ponerle texto, separaciones -->
-    <xsl:text></xsl:text>
-    <!-- br para separar-->
-                                    <xsl:value-of select="nombre" />
-                                    <xsl:text></xsl:text>
+                           <!--choose si ocurre esto, la td con fondo o td sin fondo --> 
+                              <xsl:choose>
+                                <xsl:when test="precio &gt; 100"> <!-- no es spam, si es spam coge solo las letras y no la casilla-->
+                                    <td class="rojo"><xsl:value-of select="titulo"/>
 
-                                     <xsl:value-of select="afiliacion" />
-                                    
-                                    <br/>
-                                </xsl:for-each>
+                                    </td>
+
+                                </xsl:when>
+                                <xsl:otherwise>
+                                   <td> <xsl:value-of select="titulo" /> </td>
+                                </xsl:otherwise>
+
+                              </xsl:choose>
+
+                           
+                            <td>
+                            <em>   <xsl:value-of select="@año"/> </em>
+
                             </td>
 
 
