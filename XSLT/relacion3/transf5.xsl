@@ -15,7 +15,7 @@
                     th{background-color: #CCC}
         
         
-                         </style>                
+                </style>                
 
             </head>
             <body>
@@ -26,33 +26,32 @@
                     la cantidad. </p>
 
                   <table>
-                    <tr><th colspan="2">ARTICULOS DE MI TIENDA</th> </tr> 
-                    
+                     <!--CABECERAS -->  
+                    <th>CÓDIGO</th>
+                    <th>ARTÍCULO</th>
+                    <th>CANTIDAD</th>
 
+                    <!--CONTENIDO TABLAS -->  
                     <xsl:for-each select="tienda/producto">
-                
-                    <tr> 
+                    <!--tr columnas y td filas -->
+
+                    <tr>
                         <td>
-                          ARTICULO: 
-    
+                            <xsl:value-of  select="codigo"/> <!-- VALUE OF SMP CERRADO-->
                         </td>
-    
-    
-                   
                    
                         <td>
-                           <xsl:value-of select="articulo"/>
-    
+                            <xsl:value-of  select="articulo"/>
                         </td>
-    
-    
+                   
+                        <td>
+                            <xsl:value-of  select="cantidad"/>
+                        </td>
                     </tr>
-                
-                
 
+                    </xsl:for-each>
 
-                   </xsl:for-each>
-
+                   
                  </table>
 
                
