@@ -20,7 +20,9 @@ se puede coger la raiz / o biblioteca-->
                 no se puede hacer con "<xsl:value-of select="ies/@web"/>"
             ¿COMO SE HACE?
                 despues justo que escribir la etiqueta, le escribo un atributo-->
-               <p>Página web: <a><xsl:attribute name="href"><xsl:value-of select="ies/@web"/></xsl:attribute>
+               <p>Página web: <a><xsl:attribute name="href">
+                   <xsl:value-of select="ies/@web"/>
+                   </xsl:attribute>
                    
                 
                 <xsl:value-of select="ies/@web"/></a></p>
