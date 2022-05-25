@@ -33,7 +33,7 @@
 
                     <!--CONTENIDO TABLAS -->  
                     <xsl:for-each select="tienda/producto">
-                    <!--tr columnas y td filas -->
+                    <!--tr FILA  -     td COLUMNA   -    th CABECERA -->
 
                     <tr>
                         <td>

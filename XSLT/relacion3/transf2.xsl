@@ -15,18 +15,18 @@
                 <p>Formatear la lista de artículos para que se presente como una 
                     lista no ordenada(sin numerar), de HTML.</p>
 
-                    <ol>
+                    <ul> <!--ul NO ENUMERADA -->
                 <xsl:for-each select="tienda/producto">
 
-                <ul>
+                <li>
                     <xsl:value-of select="articulo" />
-                </ul>
+                </li>
 
                
 
                 </xsl:for-each>
 
-            </ol>
+            </ul>
 
                
             </body>

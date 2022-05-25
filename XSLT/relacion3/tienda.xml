@@ -9,6 +9,11 @@
         <cantidad>10</cantidad>
         <precio>10</precio>
         <articulo>Radio-Casette</articulo>
+        <!--img/ se puede poner aqui o en tranfs. 
+        OTRA FORMA DE ENLAZAR CON LA CARPETA 
+                        <img><xsl:attribute name="src">img/
+                                      <xsl:value-of select="imagen"/>
+                                    </xsl:attribute> -->
         <imagen>img/radio.jpg</imagen>
     </producto>
     <producto>

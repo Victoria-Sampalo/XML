@@ -20,94 +20,86 @@
                      </p>
 
 
-                <!-- <ol>
-                    <xsl:for-each select="horario/dia">
+                     <xsl:for-each select="horario/dia">
+                     <xsl:sort select="numdia" order="ascending"/>
 
-                        <ul>Día 
-                            <xsl:value-of select="numdia" />
-                            <xsl:text>- Prioridad  </xsl:text>
-                            <xsl:value-of select="@prioridad" />
-
-                        </ul>
-
-
-                    </xsl:for-each>
-
-                </ol>   -->
-
-                <xsl:for-each select="horario/dia/tarea">
-                 <xsl:sort select="numdia" order="ascending"/>
-                    <ol>
+                     <div>
+                     
                         <xsl:choose>
 
                             <xsl:when test="numdia = 1">
-                                <ul>
+                                
                                 Lunes
-                                </ul>
+                                
                            
                             </xsl:when>
+
+                            
                             <xsl:when test="numdia = 2">
                                
-                                <ul>
+                              
                                     Martes
                                    
-                                </ul>
+                                
                             </xsl:when>
                             <xsl:when test="numdia = 3">
                                
-                                <ul>
+                              
                                     Miercoles
-                                </ul>
+                               
                             </xsl:when>
                             <xsl:when test="numdia = 4">
                                 
-                                <ul>
+                             
                                     Jueves
-                                </ul>
+                               
                             </xsl:when>
                             <xsl:otherwise>
                                 
-                                <ul>
+                               
                                     Viernes 
-                                </ul>
-                            </xsl:otherwise>
-
-                            
-                         </xsl:choose>
-<!-- AGREGO LA SEGUNDA LISTA NO ORDENADA -->
-                         <ol>
-                            
-                            <ul>
-                                <b>
-                                    <xsl:value-of select="nombre" />
-                                </b>
-<!--SI NO TINEE PRIORIDAD choose when -->
-<xsl:choose>
-    <xsl:when test="@prioridad = null">
-        nada
-
-    </xsl:when>
-
-    <xsl:otherwise>
-                                <text>- Prioridad:</text>
-                                <xsl:value-of select="@prioridad" /> 
-
-     </xsl:otherwise>                            
-</xsl:choose>                                
                                 
-                                <br/>
-                                <text>De </text>
-                                <xsl:value-of select="hora-ini"/>
-                                <text> a </text>
-                                <xsl:value-of select="hora-fin"/>
+                            </xsl:otherwise>
+                            
 
-                            </ul>
+                      
+
+                       
+                         </xsl:choose>
 
 
-                        </ol>
 
-                    </ol>
 
+
+                         <ul>  
+                             <xsl:for-each select="tarea">
+                             <li>
+                                 <b>
+                                     <xsl:value-of select="nombre" />
+                                 </b>
+                                 <!--si no tiene prioridad  si es != de vacio
+                                prioridad != ''
+                                if test @prioridad -->
+
+                                 <xsl:if test="@prioridad != ''" >
+                                - Prioridad:
+                                 <xsl:value-of select="@prioridad" />
+                                 
+                                </xsl:if>
+                                 
+                                 
+                                 <br/>
+                                De 
+                                 <xsl:value-of select="hora-ini"/>
+                                 a 
+                                 <xsl:value-of select="hora-fin"/>
+ 
+                             </li>
+                             </xsl:for-each>
+ 
+ 
+                         </ul>
+                         </div>
                 </xsl:for-each>
 
             </body>

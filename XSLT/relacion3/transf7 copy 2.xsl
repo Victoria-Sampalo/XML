@@ -39,103 +39,77 @@
                         <!--CONTENIDO TABLAS -->
                      <xsl:for-each select="tienda/producto">
                      <!--ordenar por articulo -->
-                     <xsl:sort select="articulo" order="ascending" />
+                     <xsl:sort select="precio" order="ascending" />
  
  
-                 
+                  <tr>
                         <!--CHOOSE DE COLORES -->
                         <xsl:choose>
                              <!--precio menores o iguales que 100  verde -->
                             <xsl:when test="precio &lt;=100">
-                                <tr class="verde">
-                          <!--LA CLASE EN TD SI  -->
-                                <td>
+
+                          
+                                <td class="verde">
                                     <xsl:value-of select="codigo" /> <!-- VALUE OF SMP CERRADO-->
                                 </td>
                                 <!-- SPAM COGE SOLO LETRA SIN ESPAM COGE LA CASILLA-->
-                                <td>
+                                <td class="verde">
                                     <xsl:value-of select="articulo" />
                                 </td>
-                                <td>
+                                <td class="verde">
                                     <xsl:value-of select="cantidad" />
                                 </td>
 
-                                <td>
+                                <td class="verde">
                                     <xsl:value-of select="precio" />
                                 </td>
-                                <td> <!-- PONERLE A UN ATRIBUTO VALORES DEL XML
-                                img, atribute name=src si fuese web href
-                            value of el nombre 
-                        OTRA FORMA DE ENLAZAR CON LA CARPETA 
-                        <img><xsl:attribute name="src">img/
-                                      <xsl:value-of select="imagen"/>
-                                    </xsl:attribute>-->
-                                    <img><xsl:attribute name="src">
-                                      <xsl:value-of select="imagen"/>
-                                    </xsl:attribute>
-                                </img>
-                                </td>
-
-                            </tr>
                         </xsl:when>
                          <xsl:when test="precio &lt; 1000 ">
-                             <tr class="azul">
-                            <td>
+                            <td class="azul">
                                 <xsl:value-of select="codigo" /> <!-- VALUE OF SMP CERRADO-->
                             </td>
 
-                            <td >
+                            <td class="azul">
                                 <xsl:value-of select="articulo" />
                             </td>
-                            <td >
+                            <td class="azul">
                                 <xsl:value-of select="cantidad" />
                             </td>
 
-                            <td >
+                            <td class="azul">
                                 <xsl:value-of select="precio" />
                             </td>
-                            <td>
-                                <img><xsl:attribute name="src">
-                                  <xsl:value-of select="imagen"/>
-                                </xsl:attribute>
-                            </img>
-                            </td>
-                        </tr>
                         </xsl:when>
 
 
                        
                           <xsl:otherwise>
-
-                          <tr class="rojo">
-                            <td>
+                            <td class="rojo">
                                 <xsl:value-of select="codigo" /> <!-- VALUE OF SMP CERRADO-->
                             </td>
 
-                            <td>
+                            <td class="rojo">
                                 <xsl:value-of select="articulo" />
                             </td>
 
-                            <td>
+                            <td class="rojo">
                                 <xsl:value-of select="cantidad" />
                             </td>
 
-                            <td>
+                            <td class="rojo">
                                 <xsl:value-of select="precio" />
                             </td>
-                            <td>
-                                <img><xsl:attribute name="src">
-                                  <xsl:value-of select="imagen"/>
-                                </xsl:attribute>
-                            </img>
-                            </td>
-                        </tr>
                            </xsl:otherwise>
                       </xsl:choose>
 
-                     
+                      <td>
+                        <img><xsl:attribute name="src">
+                          <xsl:value-of select="imagen"/>
+                        </xsl:attribute>
+                    </img>
+                    </td>
 
-                   
+                   </tr>
 
                 </xsl:for-each>
             </table>

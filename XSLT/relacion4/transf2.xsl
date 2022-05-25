@@ -22,41 +22,45 @@
 
 
 
-                <xsl:for-each select="horario/dia/tarea">
-                 <xsl:sort select="numdia" order="ascending"/>
-                    <ol>
+                     <xsl:for-each select="horario/dia">
+                     <xsl:sort select="numdia" order="ascending"/>
+
+                     <div>
+                     
                         <xsl:choose>
 
                             <xsl:when test="numdia = 1">
-                                <ul>
+                                
                                 Lunes
-                                </ul>
+                                
                            
                             </xsl:when>
+
+                            
                             <xsl:when test="numdia = 2">
                                
-                                <ul>
+                              
                                     Martes
                                    
-                                </ul>
+                                
                             </xsl:when>
                             <xsl:when test="numdia = 3">
                                
-                                <ul>
+                              
                                     Miercoles
-                                </ul>
+                               
                             </xsl:when>
                             <xsl:when test="numdia = 4">
                                 
-                                <ul>
+                             
                                     Jueves
-                                </ul>
+                               
                             </xsl:when>
                             <xsl:otherwise>
                                 
-                                <ul>
+                               
                                     Viernes 
-                                </ul>
+                                
                             </xsl:otherwise>
                             
 
@@ -64,29 +68,45 @@
 
                        
                          </xsl:choose>
-<!-- AGREGO EL RESTO DE FILAS -->
-                         <ol>
-                            
-                            <ul>
-                                <b>
-                                    <xsl:value-of select="nombre" />
-                                </b>
-                                <text>- Prioridad:</text>
-                                <xsl:value-of select="@prioridad" /> <br/>
-                                <text>De </text>
-                                <xsl:value-of select="hora-ini"/>
-                                <text> a </text>
-                                <xsl:value-of select="hora-fin"/>
-
-                            </ul>
 
 
-                        </ol>
 
-                    </ol>
 
-                </xsl:for-each>
 
+                         <ul>  
+                             <xsl:for-each select="tarea">
+                             <li>
+                                 <b>
+                                     <xsl:value-of select="nombre" />
+                                 </b>
+                                 <!--si no tiene prioridad  si es != de vacio
+                                prioridad != ''
+                                if test @prioridad -->
+
+                                 <xsl:if test="@prioridad != ''" >
+                                - Prioridad:
+                                 <xsl:value-of select="@prioridad" />
+                                 
+                                </xsl:if>
+                                 
+                                 
+                                 <br/>
+                                De 
+                                 <xsl:value-of select="hora-ini"/>
+                                 a 
+                                 <xsl:value-of select="hora-fin"/>
+ 
+                             </li>
+                             </xsl:for-each>
+ 
+ 
+                         </ul>
+                         </div>
+ 
+ 
+                     
+ 
+                 </xsl:for-each>
             </body>
 
 

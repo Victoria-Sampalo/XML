@@ -27,6 +27,7 @@
                     </p>
 
                   <table>
+                      <!--tr FILA td COLUMNA   th CABECERA -->
                     <tr><th>Articulos</th> </tr> 
 
                     <xsl:for-each select="tienda/producto">

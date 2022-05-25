@@ -42,7 +42,8 @@
                   <xsl:sort select="articulo" order="ascending" />
 
                  
-               
+                <tr><!--DIFERENCIA CON EL OTRO EJERCICIO, ESTA MEJOR CON EL TRANSF6 
+                COMO CASAN LOS TR -->
 
                
                      <!--CHOOSE DE COLORES -->
@@ -50,7 +51,7 @@
                           <!--precio menores o iguales que 100  verde -->
                          <xsl:when test="precio &lt;=100">
 
-                            <tr>
+                            
                              <td class="verde">
                                  <xsl:value-of select="codigo" /> <!-- VALUE OF SMP CERRADO-->
                              </td>
@@ -65,10 +66,10 @@
                              <td class="verde">
                                  <xsl:value-of select="precio" />
                              </td>
-                            </tr>
+                            
                      </xsl:when>
                       <xsl:when test="precio &lt; 1000 ">
-                        <tr>
+                        
                          <td class="azul">
                              <xsl:value-of select="codigo" /> <!-- VALUE OF SMP CERRADO-->
                          </td>
@@ -83,13 +84,12 @@
                          <td class="azul">
                              <xsl:value-of select="precio" />
                          </td>
-                        </tr>
+                       
                      </xsl:when>
 
 
                     
                        <xsl:otherwise>
-                           <tr>
                          <td class="rojo">
                              <xsl:value-of select="codigo" /> <!-- VALUE OF SMP CERRADO-->
                          </td>
@@ -105,12 +105,10 @@
                          <td class="rojo">
                              <xsl:value-of select="precio" />
                          </td>
-                        </tr>
-                         
                         </xsl:otherwise>
                    </xsl:choose>
 
-               
+                </tr>
 
              </xsl:for-each>
          </table>
