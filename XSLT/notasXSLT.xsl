@@ -31,6 +31,17 @@
                       </xsl:attribute>
                     </img>
                   </td>
+
+
+            IMAGEN SIN NADA 
+             <td>
+                <img>
+                   <xsl:attribute name="src">Img/<xsl:value-of select="@nombre" />.png</xsl:attribute>
+                    <xsl:attribute name="title">
+                     <xsl:value-of select="@nombre" />
+                      </xsl:attribute>
+                </img>
+              </td>      
                 
            ENLACES WEB <ies nombre="IES Mar de Alborán" web="http://www.maralboran.com/">
 
@@ -40,7 +51,24 @@
                    
                 
                 <xsl:value-of select="ies/@web"/></a></p>
+
+
+                HREF SIN NADA SOLO UN ASPECTO DE ENLACE
+                 <a>
+                    <xsl:attribute name="href">
+                     #
+                     <xsl:value-of select="." />
+
+                      </xsl:attribute>
+                       <xsl:value-of select="." />
+                       <br />
+
+                  </a>
+
+                
               -->
+
+
 
 
 
