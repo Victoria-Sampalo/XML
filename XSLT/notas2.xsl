@@ -21,7 +21,11 @@
     </head>
     <body>
         <h1></h1>
-        <xsl:for-each select="">
+        <xsl:for-each select=""> <!--TR FILAS  TD COLUMNAS TH CABECERAS colspan rowspan
+        OL O UL  y luego LI
+               escribir texto SPAM sino sin el
+        
+        -->
 
            <!--IMAGEN en mxl <imagen>imagenes/icon1.png</imagen>
          <td>
@@ -67,10 +71,40 @@
                   </a>
 
 
-
-
-
               -->
+
+               <!--OL O UL  y luego LI
+               escribir texto SPAM sino sin el -->
+
+               <ol>
+                <xsl:for-each select="geografia/paises/pais">
+                    <li>
+                       
+                    </li>
+                    <table>
+                        <tr>
+                            <td>
+                              <xsl:for-each select="moneda">
+                                    <xsl:choose>
+                                      
+                                    </xsl:choose>
+                                </xsl:for-each>
+
+                            </td>
+                            <td>
+                                <img>
+                                    <xsl:attribute name="src">Img/<xsl:value-of select="@nombre" />.png</xsl:attribute>
+                                    <xsl:attribute name="title">
+                                        <xsl:value-of select="@nombre" />
+                                    </xsl:attribute>
+                                </img>
+                            </td>
+                        </tr>
+                    </table>
+                </xsl:for-each>
+            </ol>
+
+
 
 
     

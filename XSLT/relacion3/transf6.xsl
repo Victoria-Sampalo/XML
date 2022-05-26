@@ -14,7 +14,8 @@
                     <!-- colores-->
                     .verde{background-color:green}
                 .azul{background-color:blue}
-                .rojo{background-color:red}
+                .rojo{background-color:red;}
+                
                 </style>
             </head>
             <body>

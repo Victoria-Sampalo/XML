@@ -49,7 +49,7 @@
 
                         <tr>
                             <td>
-                                 <spam class="verde">
+                            <spam class="verde">
                                 <xsl:value-of select="titulo"/>
                             </spam>
     
